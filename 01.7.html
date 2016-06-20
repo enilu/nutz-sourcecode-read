@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Introduction · GitBook</title>
+        <title>HttpClient初识 · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="01.0.html" />
+    <link rel="next" href="01.8.html" />
     
+    
+    <link rel="prev" href="01.6.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -192,7 +194,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="01.7.html">
+        <li class="chapter active" data-level="1.2.7" data-path="01.7.html">
             
                 <a href="01.7.html">
             
@@ -318,7 +320,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >HttpClient初识</a>
     </h1>
 </div>
 
@@ -333,36 +335,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#x8001;&#x65E9;&#x5C31;&#x60F3;&#x5C31;&#x60F3;&#x5199;&#x4E2A;nutz&#x7684;&#x7CFB;&#x5217;&#x9605;&#x8BFB;&#x7B14;&#x8BB0;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;nutz&#x7684;&#x70B9;&#x51FB;&#x8FD9;&#x91CC;,&#x5148;&#x5217;&#x4E2A;&#x9605;&#x8BFB;&#x8BA1;&#x5212;&#xFF0C;&#x4ECE;&#x7B80;&#x5355;&#x5230;&#x590D;&#x6742;&#xFF0C;&#x514D;&#x5F97;&#x81EA;&#x5DF1;&#x6CA1;&#x6709;&#x52A8;&#x529B;&#x4E86;</p>
-<h2 id="&#x9605;&#x8BFB;&#x76EE;&#x5F55;">&#x9605;&#x8BFB;&#x76EE;&#x5F55;</h2>
-<ul>
-<li>Json &#x5DE5;&#x5177;&#x5305;</li>
-<li>Mapl&#x7ED3;&#x6784;</li>
-<li>&#x8868;&#x8FBE;&#x5F0F;&#x5F15;&#x64CE;<ul>
-<li>&#x5728;&#x505A;&#x7C7B;&#x4F3C;&#x4FE1;&#x7528;&#x8BC4;&#x7EA7;&#x7684;&#x9879;&#x76EE;&#x65F6;&#x5019;&#x7528;&#x5230;&#x7C7B;&#x4F3C;&#x7684;&#x4E1C;&#x897F;&#x4E86;&#xFF0C;&#x6682;&#x65F6;&#x7528;&#x7684;&#x662F;Beanshell&#xFF0C;&#x53EF;&#x4EE5;&#x501F;&#x6B64;&#x673A;&#x4F1A;&#x770B;&#x770B;&#x7C7B;&#x4F3C;&#x5F15;&#x64CE;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x4E5F;&#x80FD;&#x66F4;&#x597D;&#x7684;&#x4F7F;&#x7528;</li>
+                                <p>&#x5148;&#x6765;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x770B;&#x770B;httpclient&#x8FD9;&#x4E2A;&#x6781;&#x7B80;&#x7684;&#x5E93;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF1A;</p>
+<pre><code>  Response response = Http.get(&quot;http://nutztest.herokuapp.com/&quot;);          
+  System.out.println(response.getContent());
+</code></pre><p>&#x8FD9;&#x4E2D;&#x95F4;&#x7684;&#x8C03;&#x7528;&#x94FE;&#x662F;&#xFF1A;</p>
+<pre><code>    Http.get(url)
+    ----&gt;Sender.create(Request.get(url)).send()
+    ----------------------&gt;Request.create(url, METHOD.GET, new HashMap&lt;String, Object&gt;())
+    ------------------------------&gt;return new Request().setMethod(method).setParams(params).setUrl(url).setHeader(header);
+    --------&gt;new GetSender(request)
+    ----------------------------------------&gt;openConnection()
+    ----------------------------------------&gt;setupRequestHeader()
+    ----------------------------------------&gt;createResponse()
+    --------------------------------------------&gt;status = conn.getResponseCode();
+    --------------------------------------------&gt;detail = conn.getResponseMessage();
+</code></pre><ul>
+<li>Http&#x662F;&#x5165;&#x53E3;&#x7C7B;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;get&#x65B9;&#x6CD5;&#x4F20;&#x5165;url&#xFF0C;&#x5373;&#x53EF;&#x83B7;&#x5F97;Response&#x5BF9;&#x8C61;&#xFF0C;</li>
+<li>&#x63A5;&#x4E0B;&#x6765;&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x6838;&#x5FC3;&#x7684;&#x5BF9;&#x8C61;Sender&#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x7528;&#x4E8E;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF0C;&#x6839;&#x636E;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x5177;&#x4F53;&#x6709;GetSender&#x548C;PostSender&#x4E24;&#x4E2A;&#x5B50;&#x7C7B;&#x3002;</li>
+<li>Sender&#x7C7B;&#x65B9;&#x6CD5;&#x7684;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x662F;&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x6784;&#x9020;Request&#x8BF7;&#x6C42;&#xFF0C;&#x5E76;&#x4E14;&#x6253;&#x5F00;&#x8FDE;&#x63A5;&#xFF08;OpenConnection&#xFF09;&#xFF0C;&#x5E95;&#x5C42;&#x662F;&#x8C03;&#x7528;Url&#x7684;openConnection&#x3002;</li>
+<li>&#x7136;&#x540E;&#x8C03;&#x7528;send&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;Response&#x5BF9;&#x8C61;&#xFF0C;send&#x65B9;&#x6CD5;&#x7531;&#x5B50;&#x7C7B;GetSender&#x548C;PostSender&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x3002;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x8C03;&#x7528;&#x7684;&#x662F;GetSender&#x7C7B;&#x7684;send&#x65B9;&#x6CD5;&#x3002;</li>
+<li>send&#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;openConnection&#xFF08;&#x6253;&#x5F00;&#x8FDE;&#x63A5;&#xFF09;&#xFF0C;setupRequestHeader(&#x8BBE;&#x7F6E;&#x8BF7;&#x6C42;&#x5934;&#x4FE1;&#x606F;&#xFF09;&#xFF0C;createResponse(&#x83B7;&#x53D6;Reponse&#x5BF9;&#x8C61;&#xFF09;&#x3002;</li>
+<li>&#x5176;&#x5B9E;&#x8FD9;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x90FD;&#x662F;&#x8C03;&#x7528;&#x7236;&#x7C7B;Sender&#x4E2D;&#x5C01;&#x88C5;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x540E;&#x9762;&#x4F1A;&#x4ECB;&#x7ECD;&#x5176;&#x5B9E;PostSender&#x7C7B;&#x7684;send&#x65B9;&#x6CD5;&#x4E2D;&#x4E5F;&#x662F;&#x8FD9;&#x4E48;&#x8C03;&#x7528;&#x7684;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684;&#x65F6;&#x5019;&#x6709;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x3002;</li>
 </ul>
-</li>
-<li>Http&#x5BA2;&#x6237;&#x7AEF;<ul>
-<li>&#x6700;&#x8FD1;&#x5728;&#x505A;&#x6570;&#x636E;&#x91C7;&#x96C6;&#x7684;&#x9879;&#x76EE;&#xFF0C;httpclient&#x7528;&#x7684;&#x4E03;&#x96F6;&#x516B;&#x843D;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x501F;&#x6B64;&#x6574;&#x7406;&#x4E0B;&#x4E86;&#x3002;</li>
-<li>&#x770B;&#x5B8C;&#x8FD9;&#x4E2A;&#xFF0C;&#x518D;&#x53BB;&#x597D;&#x597D;&#x770B;&#x770B;Apache &#x7684;httpclient</li>
-</ul>
-</li>
-<li>&#x751C;java java&#x5DE5;&#x5177;&#x5305;&#xFF0C;&#x8FD9;&#x4E2A;&#x5206;&#x4E3A;&#x597D;&#x51E0;&#x4E2A;&#x5B50;&#x6A21;&#x5757;&#xFF0C;&#x5177;&#x4F53;&#x770B;&#x5F97;&#x65F6;&#x5019;&#x518D;&#x5217;&#x5177;&#x4F53;&#x8BA1;&#x5212;&#x3002;</li>
-<li>Nutz.Dao </li>
-<li>IOC &#x548C;AOP </li>
-<li>Nutz.MVC</li>
-<li>&#x56FE;&#x50CF;&#x5904;&#x7406;</li>
-<li>&#x4E0E;&#x5176;&#x4ED6;&#x7B2C;&#x4E09;&#x65B9;&#x6846;&#x67B6;&#x7684;&#x96C6;&#x6210;&#x3002;</li>
-</ul>
-<h3 id="&#x57FA;&#x672C;&#x9605;&#x8BFB;&#x65B9;&#x6CD5;&#x548C;&#x6B65;&#x9AA4;">&#x57FA;&#x672C;&#x9605;&#x8BFB;&#x65B9;&#x6CD5;&#x548C;&#x6B65;&#x9AA4;</h3>
-<ul>
-<li>&#x5148;&#x901A;&#x8FC7;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x548C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#xFF0C;&#x4E86;&#x89E3;&#x6574;&#x7406;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x7EC6;&#x81F4;&#x529F;&#x80FD;&#x5217;&#x8868;&#x3002;</li>
-<li>&#x901A;&#x8FC7;&#x9605;&#x8BFB;&#x6E90;&#x7801;&#x4E86;&#x89E3;&#x5177;&#x4F53;&#x8BBE;&#x8BA1;&#x7EC6;&#x8282;&#xFF0C;&#x8981;&#x80FD;&#x80FD;&#x660E;&#x767D;&#x5176;&#x4E2D;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#x5C31;&#x66F4;&#x597D;&#x3002;</li>
-</ul>
-<h3 id="&#x4E00;&#x4E9B;&#x9605;&#x8BFB;&#x6E90;&#x7801;&#x7684;&#x5DE5;&#x5177;">&#x4E00;&#x4E9B;&#x9605;&#x8BFB;&#x6E90;&#x7801;&#x7684;&#x5DE5;&#x5177;</h3>
-<ul>
-<li>&#x5728;idea&#x4E2D;&#xFF0C;&#x9009;&#x4E2D;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x5305;&#x8DEF;&#x5F84;&#x6216;&#x8005;&#x5728;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#xFF0C;&#x6441;&#x4F4F;ctrl+shift+alt+u &#x53EF;&#x4EE5;&#x751F;&#x6210;&#x7ED3;&#x6784;&#x56FE;&#xFF0C;&#x53EF;&#x4EE5;&#x5BFC;&#x51FA;&#x6210;&#x56FE;&#x7247;&#x6587;&#x4EF6;</li>
-</ul>
+<p>&#x5176;&#x5B9E;Httpclient&#x7684;&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x5C31;&#x662F;&#x8FD9;&#x4E9B;&#xFF0C;&#x5176;&#x4ED6;&#x4E3B;&#x8981;&#x662F;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x7684;&#x5904;&#x7406;&#x3002;
+&#x6BD4;&#x5982;cookie&#x7684;&#x7BA1;&#x7406;&#xFF0C;post&#x8BF7;&#x6C42;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x5E26;&#x6587;&#x4EF6;&#x7684;post&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x3002;&#x8D85;&#x65F6;&#x5904;&#x7406;&#xFF0C;&#x4EE3;&#x7406;&#x7684;&#x4F7F;&#x7528;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x518D;&#x6B21;&#x8D5E;&#x4E00;&#x4E0B;&#xFF0C;nutz&#x7684;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x633A;&#x7684;&#xFF0C;&#x770B;&#x4EE3;&#x7801;&#x76F4;&#x63A5;&#x4ECE;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E00;&#x6B65;&#x6B65;&#x8DDF;&#x8FDB;&#x53BB;&#xFF0C;&#x53EF;&#x4EE5;&#x5F88;&#x5FEB;&#x7684;&#x4E86;&#x89E3;&#x548C;&#x638C;&#x63E1;&#x6846;&#x67B6;&#x3002;&#x5F3A;&#x70C8;&#x63A8;&#x8350;&#x3002;
+&#x8FD9;&#x6B21;&#x5C31;&#x6253;&#x7B97;&#x7528;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x6765;&#x4E00;&#x6B65;&#x6B65;&#x9605;&#x8BFB;&#x6E90;&#x7801;&#xFF0C;&#x8FD9;&#x6B21;&#x6982;&#x89C8;&#x987A;&#x4FBF;&#x628A;get&#x8BF7;&#x6C42;&#x8FC7;&#x4E86;&#x4E00;&#x904D;&#xFF0C;&#x4E0B;&#x6B21;&#x5C31;&#x4EE5;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x7684;post&#x8BF7;&#x6C42;&#xFF0C;&#x8D85;&#x65F6;&#x6765;&#x9605;&#x8BFB;&#x5B66;&#x4E60;&#x3002;</p>
 
                                 
                                 </section>
@@ -390,8 +388,12 @@
 
             
                 
+                <a href="01.6.html" class="navigation navigation-prev " aria-label="Previous page: 表达式引擎之初识">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="01.0.html" class="navigation navigation-next navigation-unique" aria-label="Next page: nutz工具库">
+                
+                <a href="01.8.html" class="navigation navigation-next " aria-label="Next page: HttpClient进阶1">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -402,7 +404,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"nutz工具库","level":"1.2","depth":1,"path":"01.0.md","ref":"01.0.md","articles":[{"title":"json系列1","level":"1.2.1","depth":2,"path":"01.1.md","ref":"01.1.md","articles":[]},{"title":"json系列2","level":"1.2.2","depth":2,"path":"01.2.md","ref":"01.2.md","articles":[]},{"title":"Mapl结构之object2mapl","level":"1.2.3","depth":2,"path":"01.3.md","ref":"01.3.md","articles":[]},{"title":"Mapl结构之Mapl2Object","level":"1.2.4","depth":2,"path":"01.4.md","ref":"01.4.md","articles":[]},{"title":"Mapl结构之MaplRebuild和MaplMerge工具类","level":"1.2.5","depth":2,"path":"01.5.md","ref":"01.5.md","articles":[]},{"title":"表达式引擎之初识","level":"1.2.6","depth":2,"path":"01.6.md","ref":"01.6.md","articles":[]},{"title":"HttpClient初识","level":"1.2.7","depth":2,"path":"01.7.md","ref":"01.7.md","articles":[]},{"title":"HttpClient进阶1","level":"1.2.8","depth":2,"path":"01.8.md","ref":"01.8.md","articles":[]},{"title":"lang包初识","level":"1.2.9","depth":2,"path":"01.9.md","ref":"01.9.md","articles":[]},{"title":"lang包之基本类型工具(Strings).md","level":"1.2.10","depth":2,"path":"01.10.md","ref":"01.10.md","articles":[]},{"title":"lang包之基本类型工具","level":"1.2.11","depth":2,"path":"01.11.md","ref":"01.11.md","articles":[]},{"title":"lang包之IO操作","level":"1.2.12","depth":2,"path":"01.12.md","ref":"01.12.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2016-06-20T09:37:38.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-06-20T09:45:50.793Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"HttpClient初识","level":"1.2.7","depth":2,"next":{"title":"HttpClient进阶1","level":"1.2.8","depth":2,"path":"01.8.md","ref":"01.8.md","articles":[]},"previous":{"title":"表达式引擎之初识","level":"1.2.6","depth":2,"path":"01.6.md","ref":"01.6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01.7.md","mtime":"2016-06-20T09:44:25.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-06-20T09:45:50.793Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
