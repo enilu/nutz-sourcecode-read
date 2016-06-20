@@ -1,0 +1,378 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>json系列2 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.1.1">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="01.3.html" />
+    
+    
+    <link rel="prev" href="01.1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.0.html">
+            
+                <a href="01.0.html">
+            
+                    
+                    nutz工具库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01.1.html">
+            
+                <a href="01.1.html">
+            
+                    
+                    json系列1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="01.2.html">
+            
+                <a href="01.2.html">
+            
+                    
+                    json系列2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="01.3.html">
+            
+                <a href="01.3.html">
+            
+                    
+                    Mapl结构之object2mapl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="01.4.html">
+            
+                <a href="01.4.html">
+            
+                    
+                    Mapl结构之Mapl2Object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="01.5.html">
+            
+                <a href="01.5.html">
+            
+                    
+                    Mapl结构之MaplRebuild和MaplMerge工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="ref.md">
+            
+                <span>
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >json系列2</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x4E0A;&#x7BC7;&#x4E3B;&#x8981;&#x9605;&#x8BFB;&#x4E86;Json&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x9488;&#x5BF9;java&#x5BF9;&#x8C61;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x3002; &#x8FD9;&#x7BC7;&#x4E3B;&#x8981;&#x9488;&#x5BF9;json&#x7684;&#x4E00;&#x4E9B;&#x5DE5;&#x5177;&#x7C7B;&#x884C;&#x7684;&#x529F;&#x80FD;&#x8FDB;&#x884C;&#x9605;&#x8BFB;&#x8BF4;&#x660E;&#xFF0C;
+&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li>json&#x7684;&#x6CE8;&#x89E3;</li>
+<li>json&#x7684;&#x683C;&#x5F0F;&#x5316;</li>
+<li>json&#x5F02;&#x5E38;&#x5904;&#x7406;</li>
+</ul>
+<p>&#x4EE5;&#x4E0A;&#x3002;</p>
+<h3 id="json&#x7684;&#x6CE8;&#x89E3;">json&#x7684;&#x6CE8;&#x89E3;</h3>
+<p>json&#x6A21;&#x5757;&#x5171;&#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x4E2A;json&#x76F8;&#x5173;&#x6CE8;&#x89E3;&#xFF0C;&#x996D;&#x522B;&#x662F;JsonField,JsonIgnore,ToJson&#x4ED6;&#x4EEC;&#x7684;&#x4F5C;&#x7528;&#x5206;&#x522B;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li>JsonField,&#x5B9A;&#x4E49;pojo&#x5BF9;&#x8C61;&#x4E2D;&#x8981;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;json&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x76F8;&#x5173;&#x5B9A;&#x4E49;&#xFF0C;&#x6BD4;&#x5982;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x3002;</li>
+<li>JsonIgnore, &#x9488;&#x5BF9;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x6765;&#x5FFD;&#x7565;&#x8F93;&#x51FA;&#x3002;</li>
+<li>ToJson,&#x4F5C;&#x7528;&#x4E0E;&#x7C7B;&#x7684;&#x6CE8;&#x89E3;&#xFF0C;&#x5982;&#x679C;&#x6DFB;&#x52A0;&#x6539;&#x6CE8;&#x89E3;,&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6CE8;&#x89E3;&#x7684;&#x5B9A;&#x4E49;&#x8C03;&#x7528;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;json&#x8F93;&#x51FA;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x53EA;&#x662F;&#x4F7F;&#x7528;&#x6539;&#x6CE8;&#x89E3;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;value&#x503C;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x8C03;&#x7528;pojo&#x5BF9;&#x8C61;&#x7684;toJson&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6539;&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x76F8;&#x5F53;&#x4E0E;&#x8BE5;&#x6CE8;&#x89E3;&#x65E0;&#x6548;&#xFF0C;&#x5C06;&#x8C03;&#x7528;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x6765;&#x8F93;&#x51FA;json&#x3002;</li>
+</ul>
+<h2 id="change-from-2015-01-02">change from 2015-01-02</h2>
+<h3 id="jsonformat-json&#x683C;&#x5F0F;&#x5316;&#x5904;&#x7406;">JsonFormat json&#x683C;&#x5F0F;&#x5316;&#x5904;&#x7406;</h3>
+<ul>
+<li>JsonFormat&#x63D0;&#x4F9B;&#x4E86;json&#x8F93;&#x51FA;&#x7684;&#x683C;&#x5F0F;&#x8BBE;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x63D0;&#x4F9B;&#x4E86;5&#x4E2D;&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#xFF1A;compact&#xFF0C;full,nice,forLook,tidy;&#x8FD9;&#x51E0;&#x4E2D;&#x683C;&#x5F0F;&#x7684;&#x610F;&#x601D;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x8BF4;&#x660E;&#x7684;&#x5F88;&#x660E;&#x767D;&#x4E86;&#xFF0C;&#x81EA;&#x884C;&#x67E5;&#x770B;&#x5427;&#x3002;
+&#x9ED8;&#x8BA4;&#x4E0D;&#x8BBE;&#x7F6E;&#x683C;&#x5F0F;&#x7684;&#x65F6;&#x5019;&#x7528;&#x7684;&#x662F;compact&#x683C;&#x5F0F;&#x3002;</li>
+<li>JsonFormat&#x57FA;&#x672C;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;POJO&#x7C7B;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#xFF0C;&#x4EE5;&#x53CA;&#x5C5E;&#x6027;&#x7684;set&#x548C;get&#x65B9;&#x6CD5;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x7C7B;&#x76F8;&#x5BF9;&#x6BD4;&#x8F83;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x4E86;&#x3002;
+&#x683C;&#x5F0F;&#x5316;&#x8BBE;&#x7F6E;&#x7684;&#x8303;&#x56F4;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#xFF1A;&#x65E5;&#x671F;&#x683C;&#x5F0F;&#xFF0C;&#x6570;&#x5B57;&#x683C;&#x5F0F;&#xFF0C;&#x7F29;&#x8FDB;&#x5217;&#x6570;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x6362;&#x884C;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x5FFD;&#x7565;&#x7A7A;&#x503C;;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x53EA;&#x8F93;&#x51FA;&#x90A3;&#x4E9B;&#x5C5E;&#x6027;&#xFF0C;&#x6216;&#x8005;&#x90E8;&#x7F72;&#x51FA;&#x54EA;&#x4E9B;&#x5C5E;&#x6027;</li>
+<li><p>JsonRenderImpl &#x5728;&#x8F93;&#x51FA;json&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x4F7F;&#x7528;JsonFormat&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x63A7;&#x5236;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<ul>
+<li><p>&#x5728;&#x8F93;&#x51FA;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x6765;&#x683C;&#x5F0F;&#x5316;&#x65E5;&#x671F;&#xFF1A;</p>
+<p>  if (obj instanceof Date) {</p>
+<pre><code>  DateFormat df = format.getDateFormat();
+  if (df != null) {
+      string2Json(df.format((Date)obj));
+      flag = false;
+  }
+</code></pre><p>  }</p>
+</li>
+<li><p>&#x5728;&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x65F6;&#x5019;&#x8F93;&#x51FA;JsonFormat&#x4E2D;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x5206;&#x5272;&#x7B26;&#xFF1A;</p>
+<p>  writer.append(format.getSeparator());</p>
+</li>
+<li><p>&#x5728;&#x5BF9;&#x8C61;&#x4E3A;&#x7A7A;&#x7684;&#x65F6;&#x5019;&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x8F93;&#x51FA;&#xFF1A;</p>
+<p>  private boolean isIgnore(String name, Object value) {</p>
+<pre><code>  if (null == value &amp;&amp; format.isIgnoreNull())
+      return true;
+  return format.ignore(name);
+</code></pre><p>  }</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="jsonexception">JsonException</h3>
+<p>JsonException &#x6709;4&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x4E2D;&#x540E;&#x9762;&#x4E24;&#x4E2A;&#xFF0C;&#x8BE6;&#x7EC6;&#x5B9A;&#x4E49;&#x4E86;&#x5728;&#x8BFB;&#x53D6;json&#x8F6C;&#x6362;&#x4E3A;java&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8C03;&#x7528;&#x6539;Exception&#x8F93;&#x51FA;json&#x7684;&#x7B2C;&#x51E0;&#x884C;&#xFF0C;&#x7B2C;&#x51E0;&#x5217;&#x4E0D;&#x89C4;&#x8303;&#x4E0D;&#x662F;&#x6807;&#x51C6;&#x7684;json</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01.1.html" class="navigation navigation-prev " aria-label="Previous page: json系列1">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="01.3.html" class="navigation navigation-next " aria-label="Next page: Mapl结构之object2mapl">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"json系列2","level":"1.2.2","depth":2,"next":{"title":"Mapl结构之object2mapl","level":"1.2.3","depth":2,"path":"01.3.md","ref":"01.3.md","articles":[]},"previous":{"title":"json系列1","level":"1.2.1","depth":2,"path":"01.1.md","ref":"01.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01.2.md","mtime":"2016-06-20T09:17:08.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-06-20T09:24:05.108Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

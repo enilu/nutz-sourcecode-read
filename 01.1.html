@@ -1,0 +1,512 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>json系列1 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.1.1">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="01.2.html" />
+    
+    
+    <link rel="prev" href="01.0.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.0.html">
+            
+                <a href="01.0.html">
+            
+                    
+                    nutz工具库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="01.1.html">
+            
+                <a href="01.1.html">
+            
+                    
+                    json系列1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="01.2.html">
+            
+                <a href="01.2.html">
+            
+                    
+                    json系列2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="01.3.html">
+            
+                <a href="01.3.html">
+            
+                    
+                    Mapl结构之object2mapl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="01.4.html">
+            
+                <a href="01.4.html">
+            
+                    
+                    Mapl结构之Mapl2Object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="01.5.html">
+            
+                <a href="01.5.html">
+            
+                    
+                    Mapl结构之MaplRebuild和MaplMerge工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="ref.md">
+            
+                <span>
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >json系列1</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>json&#x6A21;&#x5757;&#x7684;&#x5305;&#x662F;&#xFF1A;org.nutz.json&#xFF0C;&#x4E0B;&#x6587;&#x4E2D;&#x6D89;&#x53CA;&#x5230;&#x7684;&#x7C7B;&#x540D;&#x90FD;&#x662F;&#x4ECE;&#x8BE5;&#x5305;&#x8DEF;&#x5F84;&#x8BF4;&#x8D77;&#x3002;</p>
+<p>json&#x6A21;&#x5757;&#x7684;&#x5927;&#x81F4;&#x529F;&#x80FD;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x51E0;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>Json&#x7C7B;&#x5C06;java&#x5BF9;&#x8C61;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x4E92;&#x76F8;&#x8F6C;&#x6362;&#x3002;</li>
+<li>&#x5B9A;&#x4E49;&#x4E86;json&#x7684;&#x6CE8;&#x89E3;&#x3002;&#x5305;&#x62EC;&#xFF1A;Jsonield&#xFF0C;JsonIgnore&#xFF0C;ToJson</li>
+<li>&#x9488;&#x5BF9;json&#x7684;&#x8F93;&#x51FA;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x4E9B;&#x683C;&#x5F0F;&#x7684;&#x63A7;&#x5236;&#xFF0C;&#x6D89;&#x53CA;&#x7C7B;&#x5305;&#x62EC;&#xFF1A;JsonFormat</li>
+<li>&#x5F02;&#x5E38;&#x5904;&#x7406;&#xFF1A;JsonException</li>
+<li>&#x5176;&#x4ED6;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x4E9B;&#x63A5;&#x53E3;&#x548C;&#x5177;&#x4F53;&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x4E00;&#x4E00;&#x5217;&#x89C9;&#x3002;</li>
+<li>&#x8BE5;&#x6A21;&#x5757;&#x7684;&#x7ED3;&#x6784;&#x56FE;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</li>
+</ul>
+<p><img src="img/json_diagram.png" alt="json&#x6A21;&#x5757;&#x7C7B;&#x7ED3;&#x6784;&#x56FE;"></p>
+<h3 id="json&#x7C7B;&#x5C06;java&#x5BF9;&#x8C61;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x4E92;&#x76F8;&#x8F6C;&#x6362;">Json&#x7C7B;&#x5C06;java&#x5BF9;&#x8C61;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x4E92;&#x76F8;&#x8F6C;&#x6362;</h3>
+<p>&#x8BE5;&#x7C7B;&#x4E3B;&#x8981;&#x901A;&#x8FC7;fromJson&#x548C;toJson&#x4E24;&#x7C7B;&#x65B9;&#x6CD5;&#x6765;&#x5B8C;&#x6210;java&#x5BF9;&#x8C61;&#x4E0E;&#x5B57;&#x7B26;&#x4E32;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4E92;&#x8F6C;&#x6362;&#x3002;
+&#x4E3B;&#x8981;&#x65B9;&#x6CD5;&#x5165;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="img/json.png" alt="json&#x7C7B;&#x7ED3;&#x6784;&#x56FE;"></p>
+<h4 id="fromjson&#x65B9;&#x6CD5;">fromJson&#x65B9;&#x6CD5;</h4>
+<ul>
+<li>fromJson&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x4E86;&#x591A;&#x6B21;&#x91CD;&#x8F7D;&#xFF0C;&#x63A5;&#x6536;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5404;&#x79CD;&#x8F93;&#x5165;&#x6D41;&#xFF0C;&#x6587;&#x4EF6;.</li>
+<li>&#x53E6;&#x5916;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;fromJsonAsArray&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x5C06;json&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;java&#x5217;&#x8868;&#x3002;&#x8BBE;&#x8BA1;&#x548C;&#x7528;&#x6CD5;&#x4E0E;fromJson&#x6CA1;&#x6709;&#x592A;&#x5927;&#x5DEE;&#x522B;&#x3002;</li>
+<li>&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x662F;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;java&#x5BF9;&#x8C61;&#xFF0C;&#x6216;&#x8005;Map&#x5BF9;&#x8C61;&#xFF08;Map&#x5BF9;&#x8C61;&#x4E2D;&#x53EF;&#x80FD;&#x7EE7;&#x7EED;&#x5D4C;&#x5957;Map&#x6216;&#x8005;List&#x5BF9;&#x8C61;&#xFF09;</li>
+<li><p>&#x5177;&#x4F53;&#x8F6C;&#x6362;&#x6B65;&#x9AA4;</p>
+<ul>
+<li>&#x8F6C;&#x6362;&#x8FC7;&#x7A0B;&#x4E2D;&#x7528;&#x5230;&#x4E00;&#x4E9B;&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x6BD4;&#x5982;&#x6587;&#x4EF6;&#x6253;&#x5F00;&#x548C;&#x5173;&#x95ED;&#xFF0C;&#x5B57;&#x7B26;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#xFF0C;&#x8FD9;&#x4E9B;&#x7C7B;&#x90FD;&#x5728;org.nutz.lang&#x6A21;&#x5757;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x4EE5;&#x540E;&#x8BFB;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x6A21;&#x5757;&#x518D;&#x6DF1;&#x5165;&#x4E86;&#x89E3;&#x3002;</li>
+<li>fromJson&#x8C03;&#x7528;&#x7684;&#x662F;impl.JsonCompileImplV2&#x7C7B;&#x7684;parse&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x800C;&#x8FD9;&#x4E2A;parse&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E86;JsonTokenScan&#x7684;read&#x65B9;&#x6CD5;&#x3002;JsonTokenScan &#x7C7B;&#x662F;&#x89E3;&#x6790;json&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Map-List&#x5BF9;&#x8C61;&#x7684;&#x6838;&#x5FC3;&#x5B9E;&#x73B0;;</li>
+<li>&#x6700;&#x540E;&#x5728;Json&#x7C7B;&#x4E2D;&#x8C03;&#x7528;Mapl  &#x5DE5;&#x5177;&#x7C7B;&#x5C06;Map-List&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x6307;&#x5B9A;&#x7684;java&#x5BF9;&#x8C61; </li>
+<li>JsonTokenScan &#x4E2D;&#x901A;&#x8FC7;&#x987A;&#x5E8F;&#x8BFB;&#x53D6;json&#x5B57;&#x7B26;&#xFF0C;&#x6839;&#x636E;&#x5B57;&#x7B26;&#x7279;&#x5F81;&#x6765;&#x6807;&#x8BB0;&#x4E00;&#x4E2A;Map&#x6216;&#x8005;List&#x7684;&#x5F00;&#x59CB;&#x6216;&#x8005;&#x7ED3;&#x675F;&#xFF0C;&#x5C06;&#x4E00;&#x4E2A;&#x4E2A;&#x5C5E;&#x6027;&#x5B58;&#x50A8;&#x5728;Map&#x6216;&#x8005;List&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x5E76;&#x5D4C;&#x5957;&#x8D77;&#x6765;&#x3002;&#x8FD9;&#x91CC;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x6838;&#x5FC3;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;&#x3002;&#x70B9;&#x51FB;<a href="https://github.com/nutzam/nutz/blob/master/src/org/nutz/json/impl/JsonCompileImplV2.java" target="_blank">&#x67E5;&#x770B;&#x5177;&#x4F53;&#x4EE3;&#x7801;</a><h2 id="change-from-2015-01-02">change from 2015-01-02</h2>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="tojson&#x65B9;&#x6CD5;">toJson&#x65B9;&#x6CD5;</h4>
+<ul>
+<li>toJson&#x65B9;&#x6CD5;&#x540C;&#x6837;&#x8FDB;&#x884C;&#x4E86;&#x91CD;&#x8F7D;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x5C06;java&#x4E22;&#x60F3;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8F93;&#x51FA;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x8F93;&#x51FA;&#x6D41;&#xFF0C;&#x6587;&#x4EF6;&#x7B49;&#xFF0C;&#x8F93;&#x51FA;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4E32;&#x683C;&#x5F0F;&#xFF0C;&#x683C;&#x5F0F;&#x6709;&#x4F20;&#x5165;&#x7684;Jsonromat&#x89C4;&#x5B9A;&#x3002;</li>
+<li><p>&#x6240;&#x6709;&#x91CD;&#x8F7D;&#x7684;toson&#x65B9;&#x6CD5;&#x6700;&#x7EC8;&#x90FD;&#x662F;&#x8C03;&#x7528;&#xFF1A;toJson(Writer writer, Object obj, JsonFormat format),&#x8BE5;&#x65B9;&#x6CD5;&#x8C03;&#x7528;Jsonender&#x63A5;&#x53E3;&#x7684;render&#x5C06;java&#x5BF9;&#x8C61;&#x8F93;&#x51FA;&#x5230;&#x5236;&#x5B9A;&#x7684;&#x8F93;&#x51FA;&#x6D41;&#x4E2D;&#xFF0C;&#x8BE5;&#x63A5;&#x53E3;&#x6709;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#xFF1A;JsonRenderImpl&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x770B;&#x5B83;&#x7684;render&#x65B9;&#x6CD5;&#x3002;</p>
+<p>  <code></code></p>
+<pre><code>  public void render(Object obj) throws IOException {
+      if (null == obj) {
+          writer.write(&quot;null&quot;);
+      } else if (obj instanceof JsonRender) {
+          ((JsonRender) obj).render(null);
+      } else if (obj instanceof Class) {
+          string2Json(((Class&lt;?&gt;) obj).getName());
+      } else if (obj instanceof Mirror) {
+          string2Json(((Mirror&lt;?&gt;) obj).getType().getName());
+      } else {
+          Mirror mr = Mirror.me(obj.getClass());
+          // &#x679A;&#x4E3E;
+          if (mr.isEnum()) {
+              string2Json(((Enum) obj).name());
+          }
+          // &#x6570;&#x5B57;&#xFF0C;&#x5E03;&#x5C14;&#x7B49;
+          else if (mr.isNumber()) {
+              String tmp = obj.toString();
+              if (tmp.equals(&quot;NaN&quot;)) {
+                  // TODO &#x600E;&#x6837;&#x624D;&#x80FD;&#x5E94;&#x7528;&#x4E0A;JsonFormat&#x4E2D;&#x662F;&#x5426;&#x5FFD;&#x7565;&#x63A7;&#x5236;&#x5462;?
+                  // &#x56E0;&#x4E3A;&#x6B64;&#x65F6;&#x5DF2;&#x7ECF;&#x5199;&#x5165;&#x4E86;key:
+                  writer.write(&quot;null&quot;);
+              }
+              else
+                  writer.write(tmp);
+          }
+          else if (mr.isBoolean()) {
+              writer.append(obj.toString());
+          }
+          // &#x5B57;&#x7B26;&#x4E32;
+          else if (mr.isStringLike() || mr.isChar()) {
+              string2Json(obj.toString());
+          }
+          // &#x65E5;&#x671F;&#x65F6;&#x95F4;
+          else if (mr.isDateTimeLike()) {
+              boolean flag = true;
+              if (obj instanceof Date) {
+                  DateFormat df = format.getDateFormat();
+                  if (df != null) {
+                      string2Json(df.format((Date)obj));
+                      flag = false;
+                  }
+              }
+              if (flag)
+                  string2Json(format.getCastors().castToString(obj));
+          }
+          // &#x5176;&#x4ED6;
+          else {
+              // Map
+              if (obj instanceof Map) {
+                  map2Json((Map) obj);
+              }
+              // &#x96C6;&#x5408;
+              else if (obj instanceof Collection) {
+                  coll2Json((Collection) obj);
+              }
+              // &#x6570;&#x7EC4;
+              else if (obj.getClass().isArray()) {
+                  array2Json(obj);
+              }
+              // &#x666E;&#x901A; Java &#x5BF9;&#x8C61;
+              else {
+                  memo.add(obj);
+                  pojo2Json(obj);
+                  memo.remove(obj);
+              }
+          }
+      }
+  }
+</code></pre><p>  &lt;/code&gt;</p>
+</li>
+<li><p>&#x4ECE;&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x4E3B;&#x8981;&#x9488;&#x5BF9;&#x8981;&#x8F6C;&#x6362;&#x4E3A;json&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x91C7;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x3002;</p>
+<ul>
+<li><p>&#x9488;&#x5BF9;&#x5404;&#x79CD;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x662F;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;String&#x7C7B;&#x578B;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;string2Json&#x8F93;&#x51FA;&#x4E3A;json&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5728;string2Json&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x8FED;&#x4EE3;&#xFF0C;&#x6839;&#x636E;&#x5B57;&#x7B26;&#x6807;&#x8BC6;&#xFF0C;&#x8FDB;&#x884C;&#x8F93;&#x51FA;</p>
+<pre><code>   &lt;code&gt;       
+  private void string2Json(String s) throws IOException {
+      if (null == s)
+          writer.append(&quot;null&quot;);
+      else {
+          char[] cs = s.toCharArray();
+          writer.append(format.getSeparator());
+          for (char c : cs) {
+              switch (c) {
+              case &apos;&quot;&apos;:
+                  writer.append(&quot;\\\&quot;&quot;);
+                  break;
+              case &apos;\n&apos;:
+                  writer.append(&quot;\\n&quot;);
+                  break;
+              case &apos;\t&apos;:
+              case 0x0B: // \v
+                  writer.append(&quot;\\t&quot;);
+                  break;
+              case &apos;\r&apos;:
+                  writer.append(&quot;\\r&quot;);
+                  break;
+              case &apos;\f&apos;:
+                  writer.append(&quot;\\f&quot;);
+                  break;
+              case &apos;\b&apos;:
+                  writer.append(&quot;\\b&quot;);
+                  break;
+              case &apos;\\&apos;:
+                  writer.append(&quot;\\\\&quot;);
+                  break;
+              default:
+                  if (c &gt;= 256 &amp;&amp; format.isAutoUnicode()) {
+                      writer.append(&quot;\\u&quot;);
+                      String u = Strings.fillHex(c, 4);
+                      if (format.isUnicodeLower())
+                          writer.write(u.toLowerCase());
+                      else
+                          writer.write(u.toUpperCase());
+                  }
+                  else {
+                      if (c &lt; &apos; &apos; || (c &gt;= &apos;\u0080&apos; &amp;&amp; c &lt; &apos;\u00a0&apos;)
+                              || (c &gt;= &apos;\u2000&apos; &amp;&amp; c &lt; &apos;\u2100&apos;)) {
+                          writer.write(&quot;\\u&quot;);
+                          String hhhh = Integer.toHexString(c);
+                          writer.write(&quot;0000&quot;, 0, 4 - hhhh.length());
+                          writer.write(hhhh);
+                      } else {
+                          writer.append(c);
+                      }
+                  }
+              }
+          }
+          writer.append(format.getSeparator());
+      }
+  }
+</code></pre><p>   &lt;/code&gt;</p>
+</li>
+<li><p>&#x9488;&#x5BF9;map,list,&#x6570;&#x7EC4;&#x8C03;&#x7528;&#x76F8;&#x5E94;&#x7684;map2Json,coll2Json,array2Json&#x65B9;&#x6CD5;&#x8F93;&#x51FA;&#x3002;</p>
+</li>
+<li>&#x7136;&#x540E;&#x662F;&#x6700;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x9488;&#x5BF9;&#x666E;&#x901A;&#x7684;pojo&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x8F93;&#x51FA;,<ul>
+<li>&#x8BE5;&#x65B9;&#x6CD5;&#x4E3A;&#xFF1A;pojo2Json&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x4E3B;&#x8981;&#x4F7F;&#x7528;&#x53CD;&#x5C04;&#x4E00;&#x4E00;&#x83B7;&#x53D6;pojo&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x653E;&#x5728;&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x8FED;&#x4EE3;&#x5217;&#x8868;&#xFF0C;&#x7EE7;&#x7EED;&#x8C03;&#x7528;render&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x6837;&#x9012;&#x5F52;&#x8C03;&#x7528;render&#x65B9;&#x6CD5;&#xFF0C;&#x76F4;&#x5230;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x90FD;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x6216;&#x8005;&#x96C6;&#x5408;&#xFF08;&#x96C6;&#x5408;&#x4E2D;&#x662F;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF09;&#xFF1B;&#x6700;&#x540E;&#x8C03;&#x7528;render&#x65B9;&#x6CD5;&#x4E2D;&#x9488;&#x5BF9;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x548C;&#x96C6;&#x5408;&#xFF08;map&#xFF0C;list,array)&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x8F93;&#x51FA;json&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li>&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;&#x51E0;&#x4E2A;&#x5DE5;&#x5177;&#x7C7B;:<ul>
+<li>entity.JsonEntity:&#x7528;&#x4E8E;&#x63CF;&#x8FF0;java&#x5BF9;&#x8C61;&#x6620;&#x5C04;&#x4E3A;json&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x89C4;&#x5219;&#xFF08;&#x53C2;&#x8003;api&#xFF09;&#x6BD4;&#x5982;&#x5F53;&#x524D;java&#x5BF9;&#x8C61;&#x6709;&#x54EA;&#x51E0;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5206;&#x522B;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x7B49;&#x7B49;&#x3002;</li>
+<li>org.nutz.lang.Mirror:&#x8BE5;&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x53CD;&#x5C04;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x7684;&#x5C01;&#x88C5;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01.0.html" class="navigation navigation-prev " aria-label="Previous page: nutz工具库">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="01.2.html" class="navigation navigation-next " aria-label="Next page: json系列2">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"json系列1","level":"1.2.1","depth":2,"next":{"title":"json系列2","level":"1.2.2","depth":2,"path":"01.2.md","ref":"01.2.md","articles":[]},"previous":{"title":"nutz工具库","level":"1.2","depth":1,"path":"01.0.md","ref":"01.0.md","articles":[{"title":"json系列1","level":"1.2.1","depth":2,"path":"01.1.md","ref":"01.1.md","articles":[]},{"title":"json系列2","level":"1.2.2","depth":2,"path":"01.2.md","ref":"01.2.md","articles":[]},{"title":"Mapl结构之object2mapl","level":"1.2.3","depth":2,"path":"01.3.md","ref":"01.3.md","articles":[]},{"title":"Mapl结构之Mapl2Object","level":"1.2.4","depth":2,"path":"01.4.md","ref":"01.4.md","articles":[]},{"title":"Mapl结构之MaplRebuild和MaplMerge工具类","level":"1.2.5","depth":2,"path":"01.5.md","ref":"01.5.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01.1.md","mtime":"2016-06-20T09:25:54.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-06-20T09:24:05.108Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
